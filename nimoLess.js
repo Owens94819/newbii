@@ -75,18 +75,23 @@ __SOURCE__.onreadystatechange = function() {
   nimo__injection_19_4_8 = nimo__injection_19_4_7.replace(/[)]+[\[]+__function1__+[\]]+[)]/g,' = function(');
   nimo__injection_19_4_9 = nimo__injection_19_4_8.replace(/[{]+[\[]+__function3__+[\]]/g,') {');
   nimo__injection_19_4_10 = nimo__injection_19_4_9.replace(/([$]+[(]+[\w\W]*[\s]+[{]*[}]+[)])/g,'[%%function1_nimo%%]\$&[%%function2_nimo%%]');
-  nimo__injection_19_4_11 = nimo__injection_19_4_10.replace(/([\[]+%%function1_nimo%%+[\]]+[$]+[(]+[a-zA-Z0-9_$]*[{])/g,'\$& [%%null%%]');
+  nimo__injection_19_4_11 = nimo__injection_19_4_10.replace(/([\[]+%%function1_nimo%%+[\]]+[$]+[(]+[^{]*)/g,'\$&[%%null%%]');
   nimo__injection_19_4_12 = nimo__injection_19_4_11.replace(/([\[]+%%function1_nimo%%+[\]]+[$]+[(])/g,'function(');
-  nimo__injection_19_4_13 = nimo__injection_19_4_12.replace(/([{]+[\s]+[\[]+%%null%%+[\]])/g,') {');
+  nimo__injection_19_4_13 = nimo__injection_19_4_12.replace(/([\[]+%%null%%+[\]])/g,') ');
   nimo__injection_19_4_14 = nimo__injection_19_4_13.replace(/([)]+[\[]+%%function2_nimo%%+[\]])/g,'');
+  
   nimo__injection_19_4_15 = nimo__injection_19_4_14.replace(/\n/g,'/*space*/\n').replace(/([\s]+[/]+[*]+space+[*]+[/]+[\n])/g,'/*space*/\n');
  nimo__injection_19_4_16 = nimo__injection_19_4_15.replace(/([\}\)\]]+[/]+[*]+space+[*]+[/])/g,'\$&; ');
  $nimo__injection_19_5 = nimo__injection_19_4_16.replace(/[/][*]+space+[*][/]/g,'');
+
+
  $nimo__injection_corrections_0 = $nimo__injection_19_5.replace(/([a-zA-Z_$]+[\s]+[=]*["]*["]*[\n])/g,'$&;');
- $nimo__injection_19_5_0 = $nimo__injection_corrections_0.replace(/([/]+[/]+[^\n]*[\n])/g,'/****/');
- $nimo__injection_19_5_1 = $nimo__injection_19_5_0.replace(/([/][*]+[0-9_$\-!*/@$&_():;«»!#=/*%¡¢…£¿><\]\[°|}}{±¤¥^`€€™•'+?.",¿~\\\w]*[*][/])/g,'/****/');
+ $nimo__injection_19_5_0 = $nimo__injection_corrections_0.replace(/([/]+[/]+[^\n]*[\n])/g,'');
+ $nimo__injection_19_5_1 = $nimo__injection_19_5_0.replace(/([/][*][\W\w]*[*][/])/g,'');
  $nimo__injection_19_5_2 = $nimo__injection_19_5_1.replace(/(Random+\(+[0-9]*\))/g,'$random');
  nimo__injection_19_5 = $nimo__injection_19_5_2.replace(/\n/g,'');
+
+  
  $alphabet__lowercase = "onmlkjihgfedcba" + "zyxwvutsrqp";
  $alphabet__uppercase = "LMNOPQRSTUVWXYZ" + "ABCDEFGHIJK";
  $__numbers = "0123456789";
@@ -103,13 +108,16 @@ __SOURCE__.onreadystatechange = function() {
       main_0.innerHTML += $random__Names.innerHTML;
     }
     $random = main_0.innerHTML;
+    
+    
+    
     _style_ = document.createElement("style");
     _style_.id = "nimo_css"+css;
     _body_script.appendChild(_style_);
      }
     _javascript = document.createElement("script");
     if(nimo__injection_19_5.includes('window.onload')){
-    _javascript.src = 'data:text/javascript;charset=utf-8,'+encodeURIComponent('\r\n '+nimo__injection_19_5+'\r\n onload();');
+    _javascript.src = 'data:text/javascript;charset=utf-8,'+encodeURIComponent('\r\n '+nimo__injection_19_5+'\r\n onload()');
     }else{
     _javascript.src = 'data:text/javascript;charset=utf-8,'+encodeURIComponent('\r\n '+nimo__injection_19_5+'\r\n');
     }
