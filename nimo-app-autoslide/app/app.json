@@ -1,0 +1,12 @@
+
+
+
+{
+  "index":"FILE:app/app.html",
+  "img":"STRING:img/img4.jpg",
+  "color":"STRING:#cfdfef",
+  "num":"NUMBER:",
+  "title":"STRING:nimo",
+  "style":"STRING:style/style_0.css",
+  "error":"STRING:loading..."
+}
