@@ -2,10 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src=nimo-app_v0.2.js></script>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
 <body>
-hey
+
+<load app=nimo view=com:index>
+<h1>
+Loading...
+</h1>
+</load>
+
+<script>
+var app = new App('nimo');
+app.com('index.json');
+app.delay = 50;
+</script>
 </body>
 </html>
