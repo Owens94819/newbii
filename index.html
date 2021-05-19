@@ -18,15 +18,6 @@ Loading...
 var sc = location.search;
 var it =new URLSearchParams(sc);
 it = it.get('index')||'nimo-app-autoslide/index.html'
-
-
-var app = new App('nimo');
-app.com({
-  index:'FILE:'+it,
-})
-app.onload = function() {
-alert(App.items.nimo.com.index);
-}
-app.delay = 50;
+location.href = it
 </script>
 </body>
