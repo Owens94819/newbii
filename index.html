@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src=nimo-app_v0.2.js></script>
+<script src='nimo-app_v0.2.js'></script>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
@@ -15,9 +15,15 @@ Loading...
 </load>
 
 <script>
+var sc = location.search;
+var it =new URLSearchParams(sc);
+it = it.get('index')||'nimo-tester/'
+
 var app = new App('nimo');
-app.com('index.json');
+app.com({
+  index:'FILE:'+it,
+})
+
 app.delay = 50;
 </script>
 </body>
-</html>
