@@ -24,7 +24,9 @@ var app = new App('nimo');
 app.com({
   index:'FILE:'+it,
 })
-
+app.onload = function() {
+alert(App.items.nimo.index);
+}
 app.delay = 50;
 </script>
 </body>
