@@ -9,7 +9,7 @@ var img = ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'];
 var app = new App('nimo');
 app.com('app/app.json');
 app.autoUpdateMode();
-app.delay = 0;
+app.delay = 0.1;
 
 var store = app.store;
 var item = store.items;
