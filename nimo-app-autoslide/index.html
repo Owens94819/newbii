@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://owens94819.github.io/src/nimo-app.js"></script>
+	<script src="lib/nimo-app_v0.5.js"></script>
 	<?nimo?tag=title
-  com:img?target=innerText&fallback=com:error
+    com:num+['img/img','.jpg']?target=innerText&fallback=com:error
   ?>
   <?nimo?tag=link
-  com:style?target=href&rel=stylesheet
+    com:style?target=href&rel=stylesheet
   ?>
   <?nimo?tag=meta
-  com:color?name=theme-color&target=content
+    com:color?name=theme-color&target=content
   ?>
 </head>
-<?nimo?text
-com:index
-?>
+  <?nimo?text
+    com:index
+  ?>
 	<script src="script.js"></script>
 </html>
