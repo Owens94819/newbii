@@ -1,15 +1,16 @@
+
 //@ - <html>
 var body = document.documentElement;
 body.style.opacity = '0';
 
 //@ - img src
-var img = ['img0.jpg', 'img1.jpg', 'img2.jpg', 'img3.jpg', 'img4.jpg'];
+var img = 4;
 
 //@ - creating app
 var app = new App('nimo');
 app.com('app/app.json');
 app.autoUpdateMode();
-app.delay = 0.1;
+app.delay = 100;
 
 var store = app.store;
 var item = store.items;
@@ -20,7 +21,6 @@ function runTime() {
     if (typeof (get.num) != 'number') {
         return ("updates freezed");
     }
-    get.img = 'img/' + img[get.num];
     get.num++;
     return ("updated");
 }
@@ -37,13 +37,14 @@ function controller() {
 
 //@ - app updated!!
 app.onupdate = function(e) {
-    if (get.num > img.length - 1) {
+    if (get.num > img) {
         get.num = 0;
     }
 }
 
 //@ - error handler / fallback
 app.onerror = function(e) {
+  console.log(e);
     if (e.code == 419) {
         location.reload();
     }
@@ -57,7 +58,7 @@ app.onrequest = function(e) {
 //@ - app loaded
 app.onload = function(e) {
     setInterval(runTime, 1000);
-
     body.style.opacity = '';
-    //console.log(e);
-}
+    store.deleteItem('com:index');
+   
+};
